@@ -35,15 +35,6 @@ La plateforme digitale de **Laourine Logistique** a été conçue pour offrir un
 
 ---
 
-## 🛠️ Tech Stack
-
-| Couche | Technologie |
-|---|---|
-| 🖥️ Backend | [Symfony](https://symfony.com/) (PHP Framework) |
-| 🗄️ Base de données | [MariaDB](https://mariadb.org/) |
-| 🎨 Frontend | HTML / CSS / JavaScript |
-
----
 
 ## 🚀 Installation & Démarrage
 
