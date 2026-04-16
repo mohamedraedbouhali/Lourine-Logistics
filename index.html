@@ -596,6 +596,76 @@
     text-transform: uppercase;
   }
 
+  /* ── GROUPAGE & CONTAINERS ── */
+  .groupage { background: linear-gradient(180deg, #FBF7F1 0%, #F7EDDF 100%); }
+  .groupage .section-title em { color: var(--gold); }
+  .groupage-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--grey);
+    max-width: 700px;
+    margin: 24px 0 64px;
+    font-weight: 300;
+  }
+  .groupage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 48px;
+  }
+  .groupage-card {
+    background: var(--white);
+    padding: 40px 32px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 36px rgba(11,27,43,0.08);
+    border: 1px solid rgba(199,145,47,0.06);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .groupage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--green-light));
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+  .groupage-card:hover::before { transform: scaleX(1); }
+  .groupage-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 24px 56px rgba(11,27,43,0.12);
+  }
+  .groupage-flag {
+    font-size: 56px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  .groupage-country {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 12px;
+  }
+  .groupage-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--grey);
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .groupage-port {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
   /* ── WHY US ── */
   .why { background: var(--green-dark); overflow: hidden; }
   .why .section-label { color: rgba(255,255,255,0.5); }
@@ -1068,10 +1138,10 @@
     align-items: flex-start;
   }
   .footer-logo-image {
-    width: 150px;
+    width: 190px;
     height: auto;
     object-fit: contain;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     border-radius: 14px;
     image-rendering: -webkit-optimize-contrast;
     filter: contrast(1.12) saturate(1.08) brightness(1.05) drop-shadow(0 8px 16px rgba(0,0,0,0.22));
@@ -1079,25 +1149,25 @@
   .footer-logo-main {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 28px;
     color: #FFF8E7;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .footer-logo-sub {
     font-family: 'Caveat', cursive;
-    font-size: 14px;
+    font-size: 18px;
     color: rgba(255,255,255,0.45);
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   .footer-desc {
-    font-size: 13px;
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.9;
     color: rgba(255,255,255,0.45);
     font-weight: 300;
-    max-width: 280px;
-    margin-bottom: 24px;
+    max-width: 320px;
+    margin-bottom: 28px;
   }
   .social-links { display: flex; gap: 12px; }
   .social-link {
@@ -1115,7 +1185,7 @@
   }
   .social-link:hover { background: linear-gradient(135deg, var(--gold), var(--green-light)); color: white; }
   .footer-col-title {
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.4);
@@ -1124,7 +1194,7 @@
   }
   .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
   .footer-links a {
-    font-size: 13px;
+    font-size: 14px;
     color: rgba(255,255,255,0.55);
     text-decoration: none;
     transition: color 0.2s;
@@ -1137,12 +1207,12 @@
     margin-bottom: 16px;
   }
   .footer-contact-item svg { width: 16px; height: 16px; stroke: var(--green-light); stroke-width: 1.5; fill: none; margin-top: 2px; flex-shrink: 0; }
-  .footer-contact-item span { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+  .footer-contact-item span { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
   .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
+    font-size: 13px;
     color: rgba(255,255,255,0.4);
   }
 
@@ -1178,7 +1248,7 @@
     .hero-subtitle { font-size: 16px; }
     .hero-stats { gap: 40px; }
     .hero-stat-num { font-size: 36px; }
-    .services-grid, .fleet-cards, .testimonials-grid { grid-template-columns: 1fr; }
+    .services-grid, .fleet-cards, .testimonials-grid, .groupage-grid { grid-template-columns: 1fr; }
     .why-grid, .tracking-inner { grid-template-columns: 1fr; gap: 48px; }
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
@@ -1213,6 +1283,10 @@
     .hero-slide-label { right: 20px; bottom: 20px; padding: 10px 14px; font-size: 11px; }
     .service-card { padding: 40px 24px; }
     .service-name { font-size: 20px; }
+    .groupage-card { padding: 32px 24px; }
+    .groupage-grid { gap: 20px; }
+    .groupage-flag { font-size: 48px; }
+    .groupage-country { font-size: 20px; }
     .fleet-card { padding: 32px 20px; }
     .testimonial-card { padding: 32px; }
     .form-card { padding: 32px 20px; }
@@ -1252,6 +1326,12 @@
     .service-name { font-size: 18px; margin-bottom: 8px; }
     .service-desc { font-size: 13px; }
     .service-tag { font-size: 10px; padding: 3px 8px; }
+    .groupage-intro { font-size: 14px; margin: 16px 0 32px; }
+    .groupage-card { padding: 20px 16px; }
+    .groupage-flag { font-size: 40px; margin-bottom: 12px; }
+    .groupage-country { font-size: 18px; margin-bottom: 8px; }
+    .groupage-desc { font-size: 12px; margin-bottom: 12px; }
+    .groupage-port { font-size: 11px; }
     .why-card { padding: 28px; }
     .why-feature { gap: 16px; padding-bottom: 20px; }
     .why-feature-title { font-size: 18px; }
@@ -1270,10 +1350,11 @@
     .form-textarea { min-height: 80px; }
     .step-dot { width: 28px; height: 28px; font-size: 11px; }
     .footer-grid { grid-template-columns: 1fr; }
-    .footer-logo-image { width: 90px; margin-bottom: 12px; }
-    .footer-logo-main { font-size: 16px; }
-    .footer-desc { font-size: 12px; margin-bottom: 16px; }
-    .footer-col-title { font-size: 10px; }
+    .footer-logo-image { width: 120px; margin-bottom: 14px; }
+    .footer-logo-main { font-size: 20px; }
+    .footer-logo-sub { font-size: 15px; margin-bottom: 16px; }
+    .footer-desc { font-size: 14px; margin-bottom: 18px; }
+    .footer-col-title { font-size: 11px; }
     .footer-contact-item { gap: 10px; margin-bottom: 12px; }
     .footer-contact-item svg { width: 14px; height: 14px; }
     .footer-contact-item span { font-size: 12px; }
@@ -1318,12 +1399,14 @@
   <ul class="nav-links">
     <li><a href="#services" data-i18n="nav_services">Services</a></li>
     <li><a href="#why" data-i18n="nav_about">À propos</a></li>
-    <li><a href="#quote" class="nav-cta" data-i18n="nav_contact">Contactez-nous</a></li>
+    <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">Contactez-nous</a></li>
   </ul>
   <div class="lang-switch" aria-label="Language switcher">
     <button class="lang-btn active" data-lang="fr">FR</button>
     <button class="lang-btn" data-lang="en">EN</button>
     <button class="lang-btn" data-lang="es">ES</button>
+    <button class="lang-btn" data-lang="nl">NL</button>
+    <button class="lang-btn" data-lang="zh">ZH</button>
     <button class="lang-btn" data-lang="ar">AR</button>
   </div>
 </nav>
@@ -1339,22 +1422,8 @@
       Laourine Logistique assure le transport de vos marchandises avec fiabilité, ponctualité et professionnalisme — partout en Tunisie et à l'international.
     </p>
     <div class="hero-actions anim-up delay-3">
-      <a href="#quote" class="btn-primary" data-i18n="hero_btn_contact">Contactez-nous</a>
+      <a href="#contact" class="btn-primary" data-i18n="hero_btn_contact">Contactez-nous</a>
       <a href="#services" class="btn-outline" data-i18n="hero_btn_services">nos services</a>
-    </div>
-    <div class="hero-stats anim-up delay-4">
-      <div>
-        <div class="hero-stat-num">500+</div>
-        <div class="hero-stat-label" data-i18n="hero_stat_1">Livraisons / mois</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">24</div>
-        <div class="hero-stat-label" data-i18n="hero_stat_2">Gouvernorats couverts</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">98%</div>
-        <div class="hero-stat-label" data-i18n="hero_stat_3">Satisfaction client</div>
-      </div>
     </div>
   </div>
   <div class="hero-right">
@@ -1365,15 +1434,6 @@
       <div class="hero-slide" style="background-image:url('pic4.jpg')"></div>
       <div class="hero-slide" style="background-image:url('pic5.webp')"></div>
       <div class="hero-slide" style="background-image:url('pic11.jpg')"></div>
-      <div class="hero-slide-label" id="heroSlideLabel">pic 1</div>
-      <div class="hero-slider-dots" aria-label="Hero image slider">
-        <button class="hero-slider-dot active" type="button" data-slide="0" aria-label="Show image 1"></button>
-        <button class="hero-slider-dot" type="button" data-slide="1" aria-label="Show image 2"></button>
-        <button class="hero-slider-dot" type="button" data-slide="2" aria-label="Show image 3"></button>
-        <button class="hero-slider-dot" type="button" data-slide="3" aria-label="Show image 4"></button>
-        <button class="hero-slider-dot" type="button" data-slide="4" aria-label="Show image 5"></button>
-        <button class="hero-slider-dot" type="button" data-slide="5" aria-label="Show image 6"></button>
-      </div>
     </div>
     <div class="hero-pattern"></div>
   </div>
@@ -1420,8 +1480,54 @@
 <!-- SERVICES -->
 <section class="services section-pad" id="services">
   <div class="container">
-    <div class="section-label" data-i18n="services_label">Ce que nous faisons</div>
-    <h2 class="section-title" data-i18n-html="services_title">Des solutions logistiques<br>pour <em>chaque besoin</em></h2>
+    <div class="section-label" data-i18n="groupage_label">Solutions Mondiales</div>
+    <h2 class="section-title" data-i18n-html="groupage_title">Groupage & Conteneurs<br>depuis 6 pays <em>clés</em></h2>
+    <div class="groupage-intro" data-i18n="groupage_intro" style="margin-bottom:80px;padding-bottom:40px;border-bottom:1px solid rgba(0,0,0,0.08);">
+      Nous offrons des services complets de groupage et de transport par conteneur depuis les plus grands centres logistiques mondiaux vers la Tunisie.
+    </div>
+
+    <div class="groupage-grid">
+      <div class="groupage-card">
+        <div class="groupage-flag">🇸🇦</div>
+        <div class="groupage-country" data-i18n="groupage_country_1">Arabie Saoudite</div>
+        <div class="groupage-desc" data-i18n="groupage_desc_1">Export de produits pétrochimiques, matériaux de construction et biens de consommation</div>
+        <div class="groupage-port" data-i18n="groupage_port_1">📍 Port de Jeddah</div>
+      </div>
+      <div class="groupage-card">
+        <div class="groupage-flag">🇨🇳</div>
+        <div class="groupage-country" data-i18n="groupage_country_2">Chine</div>
+        <div class="groupage-desc" data-i18n="groupage_desc_2">Articles électroniques, textiles, équipements industriels et marchandises variées</div>
+        <div class="groupage-port" data-i18n="groupage_port_2">📍 Ports de Shanghai & Shenzhen</div>
+      </div>
+      <div class="groupage-card">
+        <div class="groupage-flag">🇶🇦</div>
+        <div class="groupage-country" data-i18n="groupage_country_3">Qatar</div>
+        <div class="groupage-desc" data-i18n="groupage_desc_3">Produits énergétiques, matériaux et fournitures industrielles spécialisées</div>
+        <div class="groupage-port" data-i18n="groupage_port_3">📍 Port de Doha</div>
+      </div>
+      <div class="groupage-card">
+        <div class="groupage-flag">🇩🇪</div>
+        <div class="groupage-country" data-i18n="groupage_country_4">Allemagne</div>
+        <div class="groupage-desc" data-i18n="groupage_desc_4">Machinerie, équipements automobiles, outils industriels et pièces détachées</div>
+        <div class="groupage-port" data-i18n="groupage_port_4">📍 Port d'Hambourg</div>
+      </div>
+      <div class="groupage-card">
+        <div class="groupage-flag">🇨🇦</div>
+        <div class="groupage-country" data-i18n="groupage_country_5">Canada</div>
+        <div class="groupage-desc" data-i18n="groupage_desc_5">Produits forestiers, minéraux, métaux et ressources naturelles</div>
+        <div class="groupage-port" data-i18n="groupage_port_5">📍 Ports de Vancouver & Toronto</div>
+      </div>
+      <div class="groupage-card">
+        <div class="groupage-flag">🇧🇪</div>
+        <div class="groupage-country" data-i18n="groupage_country_6">Belgique</div>
+        <div class="groupage-desc" data-i18n="groupage_desc_6">Chimie fine, pharmaceuticals, produits alimentaires et emballages</div>
+        <div class="groupage-port" data-i18n="groupage_port_6">📍 Port d'Anvers</div>
+      </div>
+    </div>
+
+    <div style="margin-top:100px;padding-top:60px;border-top:1px solid rgba(0,0,0,0.08);">
+      <div class="section-label" data-i18n="services_label">Ce que nous faisons</div>
+      <h2 class="section-title" data-i18n-html="services_title">Des solutions logistiques<br>pour <em>chaque besoin</em></h2>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-num">01</div>
@@ -1501,6 +1607,19 @@
           <span class="service-tag" data-i18n="service_6_tag_3">Historique</span>
         </div>
       </div>
+      <div class="service-card">
+        <div class="service-num">07</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="9" rx="2"/><rect x="7" y="14" width="8" height="7" rx="2"/><path d="M3 12h13"/></svg>
+        </div>
+        <div class="service-name" data-i18n="service_7_name">Groupage & Conteneurs Internationaux</div>
+        <div class="service-desc" data-i18n="service_7_desc">Service complet de groupage et transport par conteneur depuis l'Arabie Saoudite, la Chine, le Qatar, l'Allemagne, le Canada et la Belgique.</div>
+        <div class="service-tags">
+          <span class="service-tag" data-i18n="service_7_tag_1">Conteneurs</span>
+          <span class="service-tag" data-i18n="service_7_tag_2">Groupage</span>
+          <span class="service-tag" data-i18n="service_7_tag_3">6 Pays couverts</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1577,7 +1696,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer id="contact">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -1726,6 +1845,32 @@
       service_6_tag_1: 'GPS Live',
       service_6_tag_2: 'Notifications',
       service_6_tag_3: 'Historique',
+      service_7_name: 'Groupage & Conteneurs Internationaux',
+      service_7_desc: 'Service complet de groupage et transport par conteneur depuis l\'Arabie Saoudite, la Chine, le Qatar, l\'Allemagne, le Canada et la Belgique.',
+      service_7_tag_1: 'Conteneurs',
+      service_7_tag_2: 'Groupage',
+      service_7_tag_3: '6 Pays couverts',
+      groupage_label: 'Solutions Mondiales',
+      groupage_title: 'Groupage & Conteneurs<br>depuis 6 pays <em>clés</em>',
+      groupage_intro: 'Nous offrons des services complets de groupage et de transport par conteneur depuis les plus grands centres logistiques mondiaux vers la Tunisie.',
+      groupage_country_1: 'Arabie Saoudite',
+      groupage_desc_1: 'Export de produits pétrochimiques, matériaux de construction et biens de consommation',
+      groupage_port_1: '📍 Port de Jeddah',
+      groupage_country_2: 'Chine',
+      groupage_desc_2: 'Articles électroniques, textiles, équipements industriels et marchandises variées',
+      groupage_port_2: '📍 Ports de Shanghai & Shenzhen',
+      groupage_country_3: 'Qatar',
+      groupage_desc_3: 'Produits énergétiques, matériaux et fournitures industrielles spécialisées',
+      groupage_port_3: '📍 Port de Doha',
+      groupage_country_4: 'Allemagne',
+      groupage_desc_4: 'Machinerie, équipements automobiles, outils industriels et pièces détachées',
+      groupage_port_4: '📍 Port d\'Hambourg',
+      groupage_country_5: 'Canada',
+      groupage_desc_5: 'Produits forestiers, minéraux, métaux et ressources naturelles',
+      groupage_port_5: '📍 Ports de Vancouver & Toronto',
+      groupage_country_6: 'Belgique',
+      groupage_desc_6: 'Chimie fine, pharmaceuticals, produits alimentaires et emballages',
+      groupage_port_6: '📍 Port d\'Anvers',
       why_label: 'Pourquoi nous choisir',
       why_title: 'La différence<br><em style="color:#D6A24A">Laourine</em>',
       why_1_title: 'Fiabilité absolue',
@@ -1776,6 +1921,15 @@
       service_5_tag_1: 'POD', service_5_tag_2: 'Invoices', service_5_tag_3: 'Contracts',
       service_6_name: 'Real-Time Tracking', service_6_desc: 'Advanced tracking platform to monitor shipment status at every transport stage.',
       service_6_tag_1: 'Live GPS', service_6_tag_2: 'Notifications', service_6_tag_3: 'History',
+      service_7_name: 'International Groupage & Containers', service_7_desc: 'Complete groupage and container transport service from Saudi Arabia, China, Qatar, Germany, Canada and Belgium.',
+      service_7_tag_1: 'Containers', service_7_tag_2: 'Groupage', service_7_tag_3: '6 Countries covered',
+      groupage_label: 'Global Solutions', groupage_title: 'Groupage & Containers<br>from 6 <em>key</em> countries', groupage_intro: 'We offer comprehensive groupage and container transport services from the world\'s major logistics hubs to Tunisia.',
+      groupage_country_1: 'Saudi Arabia', groupage_desc_1: 'Export of petrochemicals, construction materials and consumer goods', groupage_port_1: '📍 Port of Jeddah',
+      groupage_country_2: 'China', groupage_desc_2: 'Electronics, textiles, industrial equipment and various merchandise', groupage_port_2: '📍 Ports of Shanghai & Shenzhen',
+      groupage_country_3: 'Qatar', groupage_desc_3: 'Energy products, materials and specialized industrial supplies', groupage_port_3: '📍 Port of Doha',
+      groupage_country_4: 'Germany', groupage_desc_4: 'Machinery, automotive equipment, industrial tools and spare parts', groupage_port_4: '📍 Port of Hamburg',
+      groupage_country_5: 'Canada', groupage_desc_5: 'Forest products, minerals, metals and natural resources', groupage_port_5: '📍 Ports of Vancouver & Toronto',
+      groupage_country_6: 'Belgium', groupage_desc_6: 'Fine chemicals, pharmaceuticals, food products and packaging', groupage_port_6: '📍 Port of Antwerp',
       why_label: 'Why choose us', why_title: 'The <br><em style="color:#D6A24A">Laourine</em> difference',
       why_1_title: 'Absolute reliability', why_1_desc: 'Every delivery is handled with the same high standards. Our 98% punctuality rate reflects our commitment to your deadlines.',
       why_2_title: 'Maximum security', why_2_desc: 'Your goods are insured and secured throughout transport. Our vehicles include advanced monitoring systems.',
@@ -1809,6 +1963,15 @@
       service_5_tag_1: 'POD', service_5_tag_2: 'Facturas', service_5_tag_3: 'Contratos',
       service_6_name: 'Seguimiento en tiempo real', service_6_desc: 'Plataforma avanzada para seguir el estado de sus envios en cada etapa.',
       service_6_tag_1: 'GPS en vivo', service_6_tag_2: 'Notificaciones', service_6_tag_3: 'Historial',
+      service_7_name: 'Agrupación Internacional y Contenedores', service_7_desc: 'Servicio completo de agrupación y transporte en contenedor desde Arabia Saudita, China, Qatar, Alemania, Canadá y Bélgica.',
+      service_7_tag_1: 'Contenedores', service_7_tag_2: 'Agrupación', service_7_tag_3: '6 Países cubiertos',
+      groupage_label: 'Soluciones Globales', groupage_title: 'Agrupación & Contenedores<br>desde 6 países <em>clave</em>', groupage_intro: 'Ofrecemos servicios completos de agrupación y transporte en contenedor desde los principales centros logísticos mundiales hacia Túnez.',
+      groupage_country_1: 'Arabia Saudita', groupage_desc_1: 'Exportación de petroquímicos, materiales de construcción y bienes de consumo', groupage_port_1: '📍 Puerto de Jeddah',
+      groupage_country_2: 'China', groupage_desc_2: 'Electrónica, textiles, equipos industriales y mercancía variada', groupage_port_2: '📍 Puertos de Shanghai y Shenzhen',
+      groupage_country_3: 'Qatar', groupage_desc_3: 'Productos energéticos, materiales y suministros industriales especializados', groupage_port_3: '📍 Puerto de Doha',
+      groupage_country_4: 'Alemania', groupage_desc_4: 'Maquinaria, equipos automotrices, herramientas industriales y piezas de repuesto', groupage_port_4: '📍 Puerto de Hamburgo',
+      groupage_country_5: 'Canadá', groupage_desc_5: 'Productos forestales, minerales, metales y recursos naturales', groupage_port_5: '📍 Puertos de Vancouver y Toronto',
+      groupage_country_6: 'Bélgica', groupage_desc_6: 'Químicos finos, productos farmacéuticos, alimentos y embalajes', groupage_port_6: '📍 Puerto de Amberes',
       why_label: 'Por que elegirnos', why_title: 'La diferencia<br><em style="color:#D6A24A">Laourine</em>',
       why_1_title: 'Fiabilidad absoluta', why_1_desc: 'Cada entrega se gestiona con el mismo nivel de exigencia. Nuestro 98% de puntualidad demuestra nuestro compromiso.',
       why_2_title: 'Seguridad maxima', why_2_desc: 'Su mercancia esta asegurada y protegida durante todo el trayecto.',
@@ -1820,10 +1983,90 @@
       footer_phone: '<strong style="color:rgba(255,255,255,0.7);display:block;margin-bottom:2px">Asma Laourine</strong>25 25 94 40', footer_location: 'Tunez · Cobertura nacional<br>e internacional',
       footer_copyright: '© 2026 Laourine Logistica. Todos los derechos reservados.', footer_privacy: 'Politica de privacidad', footer_legal: 'Aviso legal'
     },
+    nl: {
+      brand_main: 'Laourine Logistiek', brand_sub: 'service & transport', nav_services: 'Diensten', nav_about: 'Over ons', nav_contact: 'Contacteer ons',
+      hero_eyebrow: 'Tunesie · Logistiek & Transport', hero_title: 'Uw partner voor transport <em>zonder grenzen</em>',
+      hero_subtitle: 'Laourine Logistiek vervoert uw goederen met betrouwbaarheid, stiptheid en professionaliteit in heel Tunesie en internationaal.',
+      hero_btn_contact: 'Contacteer ons', hero_btn_services: 'onze diensten', hero_stat_1: 'Leveringen / maand', hero_stat_2: 'Gedekte regio’s', hero_stat_3: 'Klanttevredenheid',
+      hero_truck_label: 'Professioneel wagenpark', trust_1: '<strong>Verzekerde lading</strong>Volledige dekking', trust_2: '<strong>Gegarandeerde stiptheid</strong>Levering op tijd',
+      trust_3: '<strong>Modern wagenpark</strong>Gecertificeerde voertuigen', trust_4: '<strong>24/7 ondersteuning</strong>Altijd beschikbaar', trust_5: '<strong>Landelijke dekking</strong>24 gouvernoraten',
+      services_label: 'Wat wij doen', services_title: 'Logistieke oplossingen<br>voor <em>elke behoefte</em>',
+      service_1_name: 'Nationaal vrachtvervoer', service_1_desc: 'Goederenvervoer door heel Tunesie met een modern vrachtwagenpark en ervaren chauffeurs.',
+      service_1_tag_1: 'Algemene goederen', service_1_tag_2: 'Breekbare producten', service_1_tag_3: 'Bulk',
+      service_2_name: 'Express levering', service_2_desc: 'Voor dringende zendingen garandeert onze expressdienst prioritaire levering in de kortst mogelijke tijd.',
+      service_2_tag_1: 'D+1', service_2_tag_2: 'Prioriteit', service_2_tag_3: 'Live tracking',
+      service_3_name: 'Logistieke oplossingen', service_3_desc: 'Volledig beheer van de logistieke keten: consolidatie, opslag en last-mile levering.',
+      service_3_tag_1: 'Supply Chain', service_3_tag_2: 'Last Mile', service_3_tag_3: 'Consolidatie',
+      service_4_name: 'Internationaal transport', service_4_desc: 'Transportdiensten naar buurlanden met volledige douanedocumentatie en administratieve ondersteuning.',
+      service_4_tag_1: 'Douane', service_4_tag_2: 'Maghreb', service_4_tag_3: 'Documentatie',
+      service_5_name: 'Documentencentrum', service_5_desc: 'Veilige toegang tot uw leveringsbonnen, facturen, contracten en verzekeringscertificaten online.',
+      service_5_tag_1: 'POD', service_5_tag_2: 'Facturen', service_5_tag_3: 'Contracten',
+      service_6_name: 'Realtime tracking', service_6_desc: 'Geavanceerd trackingplatform om de status van uw zendingen in elke transportfase te volgen.',
+      service_6_tag_1: 'Live GPS', service_6_tag_2: 'Meldingen', service_6_tag_3: 'Historiek',
+      service_7_name: 'Internationale groupage & containers', service_7_desc: 'Volledige groupage- en containerdienst vanuit Saoedi-Arabie, China, Qatar, Duitsland, Canada en Belgie.',
+      service_7_tag_1: 'Containers', service_7_tag_2: 'Groupage', service_7_tag_3: '6 landen gedekt',
+      groupage_label: 'Wereldwijde oplossingen', groupage_title: 'Groupage & Containers<br>vanuit 6 <em>belangrijke</em> landen', groupage_intro: 'Wij bieden complete groupage- en containervervoerdiensten vanuit de belangrijkste logistieke hubs ter wereld naar Tunesie.',
+      groupage_country_1: 'Saoedi-Arabie', groupage_desc_1: 'Export van petrochemie, bouwmaterialen en consumptiegoederen', groupage_port_1: '📍 Haven van Jeddah',
+      groupage_country_2: 'China', groupage_desc_2: 'Elektronica, textiel, industrieel materieel en diverse goederen', groupage_port_2: '📍 Havens van Shanghai & Shenzhen',
+      groupage_country_3: 'Qatar', groupage_desc_3: 'Energieproducten, materialen en gespecialiseerde industriele leveringen', groupage_port_3: '📍 Haven van Doha',
+      groupage_country_4: 'Duitsland', groupage_desc_4: 'Machines, auto-uitrusting, industriele gereedschappen en reserveonderdelen', groupage_port_4: '📍 Haven van Hamburg',
+      groupage_country_5: 'Canada', groupage_desc_5: 'Bosproducten, mineralen, metalen en natuurlijke hulpbronnen', groupage_port_5: '📍 Havens van Vancouver & Toronto',
+      groupage_country_6: 'Belgie', groupage_desc_6: 'Fijne chemicalien, farmaceutica, voedingsproducten en verpakkingen', groupage_port_6: '📍 Haven van Antwerpen',
+      why_label: 'Waarom ons kiezen', why_title: 'Het verschil van<br><em style="color:#D6A24A">Laourine</em>',
+      why_1_title: 'Absolute betrouwbaarheid', why_1_desc: 'Elke levering wordt met dezelfde hoge standaard behandeld. Ons punctualiteitspercentage van 98% toont onze inzet voor uw deadlines.',
+      why_2_title: 'Maximale veiligheid', why_2_desc: 'Uw goederen zijn verzekerd en beveiligd tijdens het volledige transport. Onze voertuigen hebben geavanceerde monitorsystemen.',
+      why_3_title: 'Milieubewuste routes', why_3_desc: 'We optimaliseren routes om onze CO2-voetafdruk te verkleinen en ondersteunen duurzamer transport in Tunesie.',
+      coverage_title: 'Regionale dekking', coverage_1: '<div class="coverage-dot"></div>Groot Tunis', coverage_2: '<div class="coverage-dot"></div>Noordoost', coverage_3: '<div class="coverage-dot"></div>Centrum', coverage_4: '<div class="coverage-dot"></div>Zuid', coverage_5: '<div class="coverage-dot"></div>Internationaal',
+      certifications: 'Certificeringen', cert_1: 'ISO Transport', cert_2: 'Veilige vracht', cert_3: 'Aansprakelijkheidsverzekering',
+      quote_label: 'Offerte aanvragen', quote_title: 'Laten we uw <em>project</em> bespreken', quote_desc: 'Vul dit formulier in en ons verkoopteam neemt binnen 2 uur contact met u op met een voorstel op maat.',
+      email_label: 'E-mail', footer_desc: 'Uw betrouwbare partner voor transport en logistiek in Tunesie. Betrouwbaarheid, stiptheid, professionaliteit.', footer_contact: 'Contact',
+      footer_phone: '<strong style="color:rgba(255,255,255,0.7);display:block;margin-bottom:2px">Asma Laourine</strong>25 25 94 40', footer_location: 'Tunesie · Landelijke<br>& internationale dekking',
+      footer_copyright: '© 2026 Laourine Logistiek. Alle rechten voorbehouden.', footer_privacy: 'Privacybeleid', footer_legal: 'Juridische kennisgeving'
+    },
+    zh: {
+      brand_main: '洛林物流', brand_sub: '服务与运输', nav_services: '服务', nav_about: '关于我们', nav_contact: '联系我们',
+      hero_eyebrow: '突尼斯 · 物流与运输', hero_title: '您无国界运输的 <em>合作伙伴</em>',
+      hero_subtitle: '洛林物流以可靠、准时和专业的服务，将您的货物安全运送于突尼斯全境及国际范围。',
+      hero_btn_contact: '联系我们', hero_btn_services: '我们的服务', hero_stat_1: '每月交付', hero_stat_2: '覆盖地区', hero_stat_3: '客户满意度',
+      hero_truck_label: '专业车队', trust_1: '<strong>货物保险</strong>全面保障', trust_2: '<strong>准时保证</strong>按时交付',
+      trust_3: '<strong>现代车队</strong>认证车辆', trust_4: '<strong>24/7支持</strong>随时在线', trust_5: '<strong>全国覆盖</strong>24个省区',
+      services_label: '我们的业务', services_title: '物流解决方案<br>满足<em>各种需求</em>',
+      service_1_name: '国内货运与运输', service_1_desc: '使用现代化卡车车队和经验丰富的司机，在突尼斯全境运输货物。',
+      service_1_tag_1: '普通货物', service_1_tag_2: '易碎品', service_1_tag_3: '散货',
+      service_2_name: '快速配送', service_2_desc: '针对紧急货件，我们的快递服务确保在最短时间内优先送达。',
+      service_2_tag_1: '次日达', service_2_tag_2: '优先', service_2_tag_3: '实时追踪',
+      service_3_name: '物流解决方案', service_3_desc: '端到端物流管理：货运整合、仓储和最后一公里配送。',
+      service_3_tag_1: '供应链', service_3_tag_2: '最后一公里', service_3_tag_3: '集拼',
+      service_4_name: '国际运输', service_4_desc: '提供前往邻国的运输服务，包含完整报关文件和行政协助。',
+      service_4_tag_1: '海关', service_4_tag_2: '马格里布', service_4_tag_3: '文件',
+      service_5_name: '文件中心', service_5_desc: '在线安全访问您的送货单、发票、合同和保险凭证。',
+      service_5_tag_1: 'POD', service_5_tag_2: '发票', service_5_tag_3: '合同',
+      service_6_name: '实时追踪', service_6_desc: '先进的追踪平台，可在运输每个阶段监控货件状态。',
+      service_6_tag_1: '实时GPS', service_6_tag_2: '通知', service_6_tag_3: '历史记录',
+      service_7_name: '国际拼箱与集装箱', service_7_desc: '来自沙特阿拉伯、中国、卡塔尔、德国、加拿大和比利时的完整拼箱与集装箱运输服务。',
+      service_7_tag_1: '集装箱', service_7_tag_2: '拼箱', service_7_tag_3: '覆盖6个国家',
+      groupage_label: '全球方案', groupage_title: '来自6个<em>关键</em>国家的拼箱与集装箱', groupage_intro: '我们提供从全球主要物流枢纽到突尼斯的完整拼箱与集装箱运输服务。',
+      groupage_country_1: '沙特阿拉伯', groupage_desc_1: '石化、建筑材料和消费品出口', groupage_port_1: '📍 吉达港',
+      groupage_country_2: '中国', groupage_desc_2: '电子、纺织、工业设备及各类商品', groupage_port_2: '📍 上海和深圳港',
+      groupage_country_3: '卡塔尔', groupage_desc_3: '能源产品、材料和专业工业供应品', groupage_port_3: '📍 多哈港',
+      groupage_country_4: '德国', groupage_desc_4: '机械、汽车设备、工业工具和备件', groupage_port_4: '📍 汉堡港',
+      groupage_country_5: '加拿大', groupage_desc_5: '林产品、矿产、金属和自然资源', groupage_port_5: '📍 温哥华和多伦多港',
+      groupage_country_6: '比利时', groupage_desc_6: '精细化工、制药、食品和包装产品', groupage_port_6: '📍 安特卫普港',
+      why_label: '为什么选择我们', why_title: '洛林的<em>差异</em>',
+      why_1_title: '绝对可靠', why_1_desc: '每次交付都以同样高标准执行。98%的准时率体现了我们对时效的承诺。',
+      why_2_title: '最高安全', why_2_desc: '您的货物在运输全过程中均已投保并受到保护。车辆配备先进监控系统。',
+      why_3_title: '环保路线', why_3_desc: '我们优化路线以减少碳足迹，为突尼斯提供更可持续的运输。',
+      coverage_title: '区域覆盖', coverage_1: '<div class="coverage-dot"></div>大突尼斯', coverage_2: '<div class="coverage-dot"></div>东北部', coverage_3: '<div class="coverage-dot"></div>中部', coverage_4: '<div class="coverage-dot"></div>南部', coverage_5: '<div class="coverage-dot"></div>国际',
+      certifications: '认证', cert_1: 'ISO运输', cert_2: '安全货运', cert_3: '责任险',
+      quote_label: '获取报价', quote_title: '让我们讨论您的<em>项目</em>', quote_desc: '填写此表，销售团队将在2小时内与您联系并提供定制方案。',
+      email_label: '电子邮箱', footer_desc: '您在突尼斯值得信赖的运输与物流合作伙伴。可靠、准时、专业。', footer_contact: '联系方式',
+      footer_phone: '<strong style="color:rgba(255,255,255,0.7);display:block;margin-bottom:2px">Asma Laourine</strong>25 25 94 40', footer_location: '突尼斯 · 全国<br>及国际覆盖',
+      footer_copyright: '© 2026 洛林物流。保留所有权利。', footer_privacy: '隐私政策', footer_legal: '法律声明'
+    },
     ar: {
-      brand_main: 'الاعورين لوجيستيك', brand_sub: 'خدمة ونقل', nav_services: 'الخدمات', nav_about: 'من نحن', nav_contact: 'اتصل بنا',
+      brand_main: 'لاعورين لوجستيك', brand_sub: 'خدمة ونقل', nav_services: 'الخدمات', nav_about: 'من نحن', nav_contact: 'اتصل بنا',
       hero_eyebrow: ' لوجستيك ونقل', hero_title: 'شريككم في نقل <em>بلا حدود</em>',
-      hero_subtitle: 'تضمن لورين لوجيستيك نقل بضائعكم بموثوقية ودقة واحترافية في كامل تونس وعلى الصعيد الدولي.',
+      hero_subtitle: 'تضمن لاعورين لوجستيك  نقل بضائعكم بموثوقية ودقة واحترافية في كامل تونس وعلى الصعيد الدولي.',
       hero_btn_contact: 'اتصل بنا', hero_btn_services: 'خدماتنا', hero_stat_1: 'عمليات تسليم / الشهر', hero_stat_2: 'ولايات مغطاة', hero_stat_3: 'رضا العملاء',
       hero_truck_label: 'اسطول احترافي', trust_1: '<strong>شحن مؤمن</strong>تغطية كاملة', trust_2: '<strong>التزام بالمواعيد</strong>تسليم في الوقت', trust_3: '<strong>اسطول حديث</strong>مركبات معتمدة', trust_4: '<strong>دعم 24/7</strong>متاح دائما', trust_5: '<strong>تغطية وطنية</strong>24 ولاية',
       services_label: 'ماذا نقدم', services_title: 'حلول لوجستية<br>لكل <em>احتياج</em>',
@@ -1833,14 +2076,22 @@
       service_4_name: 'نقل دولي', service_4_desc: 'خدمات نقل نحو الدول المجاورة مع وثائق جمركية كاملة.', service_4_tag_1: 'جمارك', service_4_tag_2: 'المغرب العربي', service_4_tag_3: 'توثيق',
       service_5_name: 'مركز الوثائق', service_5_desc: 'وصول امن الى وصولات التسليم والفواتير والعقود وشهادات التامين.', service_5_tag_1: 'POD', service_5_tag_2: 'فواتير', service_5_tag_3: 'عقود',
       service_6_name: 'تتبع لحظي', service_6_desc: 'منصة متقدمة لمتابعة حالة الشحنات في كل مرحلة.', service_6_tag_1: 'GPS مباشر', service_6_tag_2: 'اشعارات', service_6_tag_3: 'سجل',
+      service_7_name: 'تجميع وحاويات دولية', service_7_desc: 'خدمة شاملة لتجميع ونقل الحاويات من المملكة العربية السعودية والصين وقطر وألمانيا وكندا وبلجيكا.', service_7_tag_1: 'حاويات', service_7_tag_2: 'تجميع', service_7_tag_3: '6 دول مغطاة',
+      groupage_label: 'حلول عالمية', groupage_title: 'تجميع وحاويات<br>من 6 دول <em>رئيسية</em>', groupage_intro: 'نقدم خدمات تجميع ونقل حاويات شاملة من أكبر المراكز اللوجستية العالمية إلى تونس.',
+      groupage_country_1: 'المملكة العربية السعودية', groupage_desc_1: 'تصدير البتروكيماويات والمواد الإنشائية والسلع الاستهلاكية', groupage_port_1: '📍 ميناء جدة',
+      groupage_country_2: 'الصين', groupage_desc_2: 'الإلكترونيات والنسيج والمعدات الصناعية والبضائع المتنوعة', groupage_port_2: '📍 موانئ شنغهاي وشنتشن',
+      groupage_country_3: 'قطر', groupage_desc_3: 'المنتجات الطاقية والمواد والإمدادات الصناعية المتخصصة', groupage_port_3: '📍 ميناء الدوحة',
+      groupage_country_4: 'ألمانيا', groupage_desc_4: 'الآلات والمعدات الكهربائية والأدوات الصناعية وقطع الغيار', groupage_port_4: '📍 ميناء هامبورغ',
+      groupage_country_5: 'كندا', groupage_desc_5: 'المنتجات الحرجية والمعادن والفلزات والموارد الطبيعية', groupage_port_5: '📍 موانئ فانكوفر وتورنتو',
+      groupage_country_6: 'بلجيكا', groupage_desc_6: 'الكيمياء الدقيقة والمستحضرات الصيدلانية والمنتجات الغذائية والتعبئة', groupage_port_6: '📍 ميناء أنتويرب',
       why_label: 'لماذا نحن', why_title: 'ما يميز<br><em style="color:#D6A24A">لورين</em>', why_1_title: 'موثوقية عالية', why_1_desc: 'كل عملية تسليم تتم بنفس مستوى الصرامة. نسبة الالتزام بالمواعيد 98%.',
       why_2_title: 'اقصى درجات الامان', why_2_desc: 'بضائعكم مؤمنة ومحمية طوال الرحلة.', why_3_title: 'مسارات صديقة للبيئة', why_3_desc: 'نحسن المسارات لتقليل البصمة الكربونية.',
       coverage_title: 'التغطية حسب المنطقة', coverage_1: '<div class="coverage-dot"></div>تونس الكبرى', coverage_2: '<div class="coverage-dot"></div>الشمال الشرقي', coverage_3: '<div class="coverage-dot"></div>الوسط', coverage_4: '<div class="coverage-dot"></div>الجنوب', coverage_5: '<div class="coverage-dot"></div>دولي',
       certifications: 'شهادات', cert_1: 'ISOx نقل', cert_2: 'شحن مؤمن', cert_3: 'تأمين مسؤولية مدنية',
       quote_label: 'اطلب عرض سعر', quote_title: 'لنتحدث عن <em>مشروعكم</em>', quote_desc: 'املأ هذا النموذج وسيتصل بكم فريقنا التجاري خلال ساعتين بعرض مناسب.',
       email_label: 'البريد الالكتروني', footer_desc: 'شريككم الموثوق للنقل والخدمات اللوجستية في تونس.', footer_contact: 'اتصال',
-      footer_phone: '<strong style="color:rgba(255,255,255,0.7);display:block;margin-bottom:2px">اسمى الاعورين</strong>  40 94 25 25', footer_location: 'تونس - تغطية وطنية<br>ودولية',
-      footer_copyright: '© 2026 الاعورين لوجيستيك. جميع الحقوق محفوظة.', footer_privacy: 'سياسة الخصوصية', footer_legal: 'معلومات قانونية'
+      footer_phone: '<strong style="color:rgba(255,255,255,0.7);display:block;margin-bottom:2px">لاعورين لوجستيك</strong>  40 94 25 25', footer_location: 'تونس - تغطية وطنية<br>ودولية',
+      footer_copyright: '© 2026 لاعورين لوجستيك. جميع الحقوق محفوظة.', footer_privacy: 'سياسة الخصوصية', footer_legal: 'معلومات قانونية'
     }
   };
 
